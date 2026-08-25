@@ -1,9 +1,14 @@
 
 class Product{
     constructor(id,brand,productName,price,){
-        this.name = id;
+        this.id = id;
         this.brand = brand
-        this.name = productName
-        this.name = price
+        this.productName = productName
+        this.price = price
+    }
+
+    getProductDetail(){
+        return `product : ${this.productName} brand: ${this.brand} price: ${this.price}`
     }
 }
+
