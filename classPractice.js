@@ -4,4 +4,10 @@ class Menu{
         this.dishes = dishes
         this.price = price
     }
+
+    getDetail()
+    {
+        return `Dishes:${this.dishes} Price: ${this.price}  `
+    }
 }
+
