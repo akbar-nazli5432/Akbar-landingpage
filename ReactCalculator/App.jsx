@@ -33,3 +33,27 @@ export default function App() {
     }
   };
 
+   // Calculation logic
+  const calculate = (first, second, operation) => {
+    const a = parseFloat(first);
+    const b = parseFloat(second);
+
+    switch (operation) {
+      case "+":
+        return a + b;
+
+      case "-":
+        return a - b;
+
+      case "×":
+        return a * b;
+
+      case "÷":
+        return b === 0 ? "Error" : a / b;
+
+      default:
+        return b;
+    }
+  };
+
+
