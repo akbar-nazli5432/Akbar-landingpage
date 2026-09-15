@@ -20,3 +20,16 @@ export default function App() {
     setDisplay(display === "0" ? number : display + number);
   };
 
+   // Decimal button
+  const inputDecimal = () => {
+    if (waitingForSecondNumber) {
+      setDisplay("0.");
+      setWaitingForSecondNumber(false);
+      return;
+    }
+
+    if (!display.includes(".")) {
+      setDisplay(display + ".");
+    }
+  };
+
