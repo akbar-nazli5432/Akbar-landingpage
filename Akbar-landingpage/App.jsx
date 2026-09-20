@@ -48,6 +48,10 @@ function ProjectPage(){
   </>)
 }
 
+function HideComponent(){
+  const [visible, setVisible] = useState(0) //add new function for visible
+}
+
 export default function App(){
   return(
   <>
