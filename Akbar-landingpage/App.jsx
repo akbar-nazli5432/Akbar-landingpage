@@ -34,7 +34,18 @@ function EducationPage(){
   </>)
 }
 
-
+function ProjectPage(){
+  return(<>
+  <div style={styles.homeInlineBox2}>
+    <h2 style={styles.textcolorOrange}>PROJECT</h2>
+      <text>1. CHEMICAL ANALYSIS </text>
+      <text>2. FMS ALERTING SYSTEM</text>
+      <text>3. QR CODE_GENERATOR</text>
+      <> </>
+  </div>
+  
+  </>)
+}
 
 export default function App(){
   return(
@@ -50,6 +61,7 @@ export default function App(){
     </div>
     <HomePage/>
     <EducationPage/>
+    <ProjectPage/>
   </div>
   </>)
 }
