@@ -127,8 +127,8 @@ const styles = {
   backgroundPosition: 'center',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
-  width: '100vw',
-  height: '100vh',
+  width: '100%',
+  height: '100%',
   },
 
 }
