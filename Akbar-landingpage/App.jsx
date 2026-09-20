@@ -68,18 +68,18 @@ export default function App(){
 
 const styles = {
   container:{
-    backgroundColor: '#84d9ee',
+    backgroundColor: '#dfa220',
   },
 
   button:{
-    backgroundColor: '#84d9ee',
+    backgroundColor: '#d6a843',
     border : 'none',
     transform: 'translateY(-3px)',/* Lifts the button up */
     boxShadow: '0 10px 20px rgba(99, 102, 241, 0.4)', /* Adds glow */
 
   },
   canvasLayout:{
-    backgroundColor: '#e4c39e',
+    backgroundColor: '#a3651f',
   },
 
   homeInlineBox:{
