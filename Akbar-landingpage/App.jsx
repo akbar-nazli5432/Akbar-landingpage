@@ -2,6 +2,7 @@ import { useState } from 'react'
 import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
+import backgroundImage from './assets/yellow.webp'
 import './App.css'
 
 function HomePage(){
@@ -50,7 +51,7 @@ function ProjectPage(){
 export default function App(){
   return(
   <>
-  <div >
+  <div style={styles.image} >
     <h2>AKBAR BIN NAZLI</h2>  
     <div style={styles.container}>
     <button style={styles.button }  >Home</button>
@@ -115,6 +116,15 @@ const styles = {
   },
   textcolorOrange:{
     color: 'Orange',
-  }
+  },
+
+  image:{
+  backgroundImage: `url(${backgroundImage})`,
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  width: '100vw',
+  height: '100vh',
+  },
 
 }
