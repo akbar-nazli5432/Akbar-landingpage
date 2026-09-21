@@ -3,7 +3,7 @@ import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import backgroundImage from './assets/yellow.webp'
-import './App.css'
+//import './App.css'
 
 function HomePage(){
   return(<>
@@ -23,11 +23,11 @@ function HomePage(){
 function EducationPage(){
   return(<>
   <div style={styles.homeInlineBox2}>
-    <h2>Certification</h2>
-      <text>BACHELOR IN ENGINEERING TECHNOLOGY IN MECHATRONICS </text>
-        <text>UNIVERSITI KUALA LUMPUR-MFI</text>
+    <h2 style={styles.textcolorOrange}>EDUCATION</h2>
+      <text> ○ BACHELOR IN ENGINEERING TECHNOLOGY IN MECHATRONICS </text>
+        <text> ○ UNIVERSITI KUALA LUMPUR-MFI</text>
       <> </>
-      <text>CERTIFIED AWS CLOUD PRACTITIONER</text>
+      <text> ○ CERTIFIED AWS CLOUD PRACTITIONER</text>
       <> </>
         <text>AMAZON WEB SERVICES</text>
   </div>
@@ -39,23 +39,22 @@ function ProjectPage(){
   return(<>
   <div style={styles.homeInlineBox2}>
     <h2 style={styles.textcolorOrange}>PROJECT</h2>
-      <text>1. CHEMICAL ANALYSIS </text>
-      <text>2. FMS ALERTING SYSTEM</text>
-      <text>3. QR CODE_GENERATOR</text>
+      <text>
+        1. CHEMICAL ANALYSIS                                       
+        2. FMS FILTERING SYSTEM                                
+        3. QR-CODE GENERATOR                                  
+      </text>
+
       <> </>
   </div>
   
   </>)
 }
 
-function HideComponent(){
-  const [visible, setVisible] = useState(0) //add new function for visible
-}
-
 export default function App(){
   return(
   <>
-  <div style={styles.image} >
+  <div style={styles.image}>
     <h2>AKBAR BIN NAZLI</h2>  
     <div style={styles.container}>
     <button style={styles.button }  >Home</button>
@@ -128,7 +127,7 @@ const styles = {
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   width: '100%',
-  height: '100%',
+  minHeight: '100%',
   },
 
 }
