@@ -49,6 +49,20 @@ function ProjectPage() {
   )
 }
 
+function SkillsPage() {
+  return (
+    <div style={styles.homeInlineBox2}>
+      <h2 style={styles.textcolorOrange}>SKILLS</h2>
+
+      <p>1. Microsoft SQL Server</p>
+      <p>2. Node-red</p>
+      <p>3. Javascript</p>
+      <p>4. React.Js</p>
+    </div>
+  )
+}
+
+
 export default function App() {
 
   // Home page appears first
@@ -82,6 +96,14 @@ export default function App() {
           Projects
         </button>
 
+        <button
+          style={styles.button}
+          onClick={() => setActivePage("skills")}
+        >
+          Skills
+
+        </button>
+
       </div>
 
       {/* Only selected page will appear */}
@@ -91,6 +113,9 @@ export default function App() {
       {activePage === "education" && <EducationPage />}
 
       {activePage === "projects" && <ProjectPage />}
+
+      {activePage === "skills" && <SkillsPage />}
+
 
     </div>
   )
