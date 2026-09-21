@@ -1,133 +1,164 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import backgroundImage from './assets/yellow.webp'
-//import './App.css'
+import { useState } from "react"
+import backgroundImage from "./assets/yellow.webp"
+// import "./App.css"
 
-function HomePage(){
-  return(<>
-      <div style={styles.homeInlineBox}>
-        <h2>Hello,</h2>
-        <text style={styles.textcolorBlue}>I AM AKBAR</text>
-          <h2 style={styles.textcolorOrange}>SYSTEM ENGINEER</h2>
-        <text> Aspiring System Engineer with over 4 years of experience delivering ERP and
-          IoT solutions tailored to the aluminum manufacturing sector. Proficient in
-          Microsoft SQL Server, Node-RED, and JavaScript, with a strong passion for
-          DevOps practices, cloud technologies, CI/CD pipelines, monitoring, and infrastructure automation.
-        </text>
-  </div>
-  </>)
-}
+function HomePage() {
+  return (
+    <div style={styles.homeInlineBox}>
+      <h2>Hello,</h2>
 
-function EducationPage(){
-  return(<>
-  <div style={styles.homeInlineBox2}>
-    <h2 style={styles.textcolorOrange}>EDUCATION</h2>
-      <text> ○ BACHELOR IN ENGINEERING TECHNOLOGY IN MECHATRONICS </text>
-        <text> ○ UNIVERSITI KUALA LUMPUR-MFI</text>
-      <> </>
-      <text> ○ CERTIFIED AWS CLOUD PRACTITIONER</text>
-      <> </>
-        <text>AMAZON WEB SERVICES</text>
-  </div>
-  
-  </>)
-}
+      <span style={styles.textcolorBlue}>I AM AKBAR</span>
 
-function ProjectPage(){
-  return(<>
-  <div style={styles.homeInlineBox2}>
-    <h2 style={styles.textcolorOrange}>PROJECT</h2>
-      <text>
-        1. CHEMICAL ANALYSIS                                       
-        2. FMS FILTERING SYSTEM                                
-        3. QR-CODE GENERATOR                                  
-      </text>
+      <h2 style={styles.textcolorOrange}>
+        SYSTEM ENGINEER
+      </h2>
 
-      <> </>
-  </div>
-  
-  </>)
-}
-
-export default function App(){
-  return(
-  <>
-  <div style={styles.image}>
-    <h2>AKBAR BIN NAZLI</h2>  
-    <div style={styles.container}>
-    <button style={styles.button }  >Home</button>
-    <>  </>
-    <button style={styles.button} >Education</button>
-    <>  </>
-    <button style={styles.button}>Projects</button>
+      <p>
+        Aspiring System Engineer with over 4 years of experience delivering
+        ERP and IoT solutions tailored to the aluminum manufacturing sector.
+        Proficient in Microsoft SQL Server, Node-RED, and JavaScript, with a
+        strong passion for DevOps practices, cloud technologies, CI/CD
+        pipelines, monitoring, and infrastructure automation.
+      </p>
     </div>
-    <HomePage/>
-    <EducationPage/>
-    <ProjectPage/>
-  </div>
-  </>)
+  )
+}
+
+function EducationPage() {
+  return (
+    <div style={styles.homeInlineBox2}>
+      <h2 style={styles.textcolorOrange}>EDUCATION</h2>
+
+      <p>○ BACHELOR IN ENGINEERING TECHNOLOGY IN MECHATRONICS</p>
+      <p>○ UNIVERSITI KUALA LUMPUR-MFI</p>
+      <p>○ CERTIFIED AWS CLOUD PRACTITIONER</p>
+    
+    </div>
+  )
+}
+
+function ProjectPage() {
+  return (
+    <div style={styles.homeInlineBox2}>
+      <h2 style={styles.textcolorOrange}>PROJECTS</h2>
+
+      <p>1. CHEMICAL ANALYSIS</p>
+      <p>2. FMS ALERTING SYSTEM</p>
+      <p>3. QR-CODE GENERATOR</p>
+    </div>
+  )
+}
+
+export default function App() {
+
+  // Home page appears first
+  const [activePage, setActivePage] = useState("home")
+
+  return (
+    <div style={styles.image}>
+
+      <h2>AKBAR BIN NAZLI</h2>
+
+      <div style={styles.container}>
+
+        <button
+          style={styles.button}
+          onClick={() => setActivePage("home")}
+        >
+          Home
+        </button>
+
+        <button
+          style={styles.button}
+          onClick={() => setActivePage("education")}
+        >
+          Education
+        </button>
+
+        <button
+          style={styles.button}
+          onClick={() => setActivePage("projects")}
+        >
+          Projects
+        </button>
+
+      </div>
+
+      {/* Only selected page will appear */}
+
+      {activePage === "home" && <HomePage />}
+
+      {activePage === "education" && <EducationPage />}
+
+      {activePage === "projects" && <ProjectPage />}
+
+    </div>
+  )
 }
 
 const styles = {
-  container:{
-    backgroundColor: '#dfa220',
+
+  container: {
+    backgroundColor: "#dfa220",
+    padding: "10px",
+    display: "flex",
+    gap: "10px",
   },
 
-  button:{
-    backgroundColor: '#d6a843',
-    border : 'none',
-    transform: 'translateY(-3px)',/* Lifts the button up */
-    boxShadow: '0 10px 20px rgba(99, 102, 241, 0.4)', /* Adds glow */
-
-  },
-  canvasLayout:{
-    backgroundColor: '#a3651f',
-  },
-
-  homeInlineBox:{
-      display: 'inline-block', 
-      border: '1px solid black',
-      borderRadius:'5px', 
-      padding: '10px',
-      height:350,
-      width:600,
-      backgroundColor: '#f5f8f7',
-      marginTop :'30px' ,
-      marginLeft:'5px',
-      marginRight: '100',
-      textAlign:'left'
-      
-  },
-  homeInlineBox2:{
-      display: 'inline-block', 
-      border: '1px solid black',
-      borderRadius:'5px', 
-      padding: '10px',
-      height:150,
-      width:600,
-      backgroundColor: '#f5f8f7',
-      marginTop :'30px' ,
-      marginLeft:'5px',
-      marginRight: '100',
-      textAlign:'left'
-      
-  },
-  textcolorBlue:{
-    color: 'Blue',
-  },
-  textcolorOrange:{
-    color: 'Orange',
+  button: {
+    backgroundColor: "#d6a843",
+    border: "none",
+    padding: "10px 20px",
+    cursor: "pointer",
+    borderRadius: "5px",
+    transform: "translateY(-3px)",
+    boxShadow: "0 10px 20px rgba(99, 102, 241, 0.4)",
   },
 
-  image:{
-  backgroundImage: `url(${backgroundImage})`,
-  backgroundPosition: 'center',
-  backgroundSize: 'cover',
-  backgroundRepeat: 'no-repeat',
-  width: '100%',
-  minHeight: '100%',
+  canvasLayout: {
+    backgroundColor: "#a3651f",
   },
 
+  homeInlineBox: {
+    display: "inline-block",
+    border: "1px solid black",
+    borderRadius: "5px",
+    padding: "10px",
+    minHeight: "350px",
+    width: "600px",
+    backgroundColor: "#f5f8f7",
+    marginTop: "30px",
+    marginLeft: "5px",
+    textAlign: "left",
+  },
+
+  homeInlineBox2: {
+    display: "inline-block",
+    border: "1px solid black",
+    borderRadius: "5px",
+    padding: "10px",
+    minHeight: "150px",
+    width: "600px",
+    backgroundColor: "#f5f8f7",
+    marginTop: "30px",
+    marginLeft: "5px",
+    textAlign: "left",
+  },
+
+  textcolorBlue: {
+    color: "blue",
+  },
+
+  textcolorOrange: {
+    color: "orange",
+  },
+
+  image: {
+    backgroundImage: `url(${backgroundImage})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    width: "100%",
+    minHeight: "100vh",
+  },
 }
